@@ -1,0 +1,44 @@
+Day 9 — pip + Pandas 快速入门
+===============================
+日期：2026-07-12
+
+
+一、pip：Python 的应用商店
+--------------------------
+
+pip install 包名    → 安装
+pip list           → 查看已安装
+pip uninstall 包名  → 卸载
+
+你已经装好的核心库：
+  pandas / numpy / matplotlib / yfinance / akshare / jupyterlab
+
+
+二、Pandas 核心概念
+-------------------
+
+DataFrame = Python 里的 Excel 表格
+系列（Series）= 表格中的一列
+
+三、五大核心操作（L3，每天必用）
+-------------------------------
+
+1. df.shape              → 看形状（多少行，多少列）
+2. df["列名"]            → 取某一列
+3. df.describe()         → 统计摘要（平均值、最大、最小、标准差...）
+4. df[df["列"] > 值]     → 筛选符合条件的行
+5. df.sort_values("列")  → 排序
+
+四、数据源
+----------
+
+akshare：国内股票数据（今天代理不通）
+yfinance：国际股票数据（今天被限流）
+
+都不是代码问题，是网络问题，下次再拉真数据。
+
+五、今日产出物
+--------------
+
+□ /notebooks/Day9_Pandas入门.ipynb（五大操作已实操）
+□ 本笔记
