@@ -1,0 +1,38 @@
+Day 8 — Python环境搭建 + Git初始化
+=====================================
+日期：2026-07-12
+
+
+一、环境验证结果
+----------------
+
+✅ Python 3.12.13（pyenv管理）
+✅ Git 2.50.1（系统自带）
+✅ VS Code 1.127.0
+✅ Jupyter Lab 4.6.1
+✅ pandas 3.0.3 / numpy 2.5.1 / matplotlib 3.11.0
+✅ yfinance 1.5.1 / akshare 1.18.64
+❌ GitHub CLI（gh）— 下午安装
+
+
+二、项目目录结构
+----------------
+
+~/Desktop/股/
+├── notebooks/     ← Jupyter Notebook 放这里（每个分析一个 .ipynb）
+├── data/          ← 下载的股票数据文件（CSV）
+├── scripts/       ← 独立的 Python 脚本（.py）
+├── outputs/       ← 生成的图表、报告
+├── dayN/          ← 每天的学习笔记
+├── LEARNING_LOG.md
+└── 金融学习赚钱计划表_每日任务版v8.docx
+
+三、这个结构的道理
+
+notebooks/ 和 scripts/ 分开：
+  - Notebook → 探索、画图、试想法（交互式）
+  - Scripts  → 正式的策略代码、可复用的工具函数
+
+data/ 和 outputs/ 要进 .gitignore：
+  - 数据文件太大，不提交到 Git
+  - 生成的图也不提交，需要时重新跑
