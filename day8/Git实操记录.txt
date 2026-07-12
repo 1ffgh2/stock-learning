@@ -1,0 +1,59 @@
+Day 8 — Git实操记录
+=====================
+日期：2026-07-12
+
+
+一、环境现状
+------------
+Python 3.12.13（pyenv） ✅
+Git 2.50.1 ✅
+VS Code 1.127.0 ✅
+Jupyter Lab + pandas/numpy/matplotlib/yfinance/akshare ✅
+GitHub CLI (gh) ✅
+GitHub 仓库：https://github.com/1ffgh2/stock-learning
+
+
+二、Git 三区模型
+----------------
+工作目录  ──git add──▶  暂存区（纸箱）  ──git commit──▶  仓库（存档库）
+
+• 工作目录 = 你正在改的文件，Git 不管
+• 暂存区 = 挑好要存档的改动，放进纸箱
+• 仓库 = 永久存档
+
+
+三、今天执行的命令
+------------------
+
+1. git init                          → 初始化仓库
+2. git status                        → 看状态（养成习惯：每次操作前先 status）
+3. git add .gitignore ... day8/      → 把文件放进暂存区
+4. git commit -m "初始化项目..."      → 第一次存档
+5. git config user.name / user.email → 配置身份
+6. git commit --amend --reset-author → 修正第一次存档的作者
+7. git log --oneline                 → 翻存档记录
+8. gh auth login                     → 登录 GitHub
+9. gh repo create stock-learning ... → 在 GitHub 建仓库
+10. git push -u origin main          → 推送到 GitHub
+
+
+四、日常工作流（以后每天都这样）
+--------------------------------
+
+# 学完一天，存档
+git add dayN/
+git commit -m "Day N: 主题"
+
+# 推到 GitHub 备份
+git push
+
+# 就这三行，每天重复。
+
+
+五、关键概念
+------------
+• commit = 存档点，可以随时回到任何一个存档
+• push = 把本地存档同步到 GitHub（备份 + 展示）
+• .gitignore = 黑名单，被忽略的文件 Git 当空气
+• origin = 远程仓库的别名（默认就是叫 origin）
+• main = 主分支名
