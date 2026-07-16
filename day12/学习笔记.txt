@@ -1,0 +1,92 @@
+Day 12 — 子图布局与简历级图表
+===========================
+日期：2026-07-14
+
+
+一、今日产出
+-----------
+
+□ GridSpec 骨架练习 — 学会不等分切格子
+□ 茅台技术分析仪表盘 — 4合1简历级大图（day12/茅台仪表盘.png）
+
+
+二、核心：GridSpec 子图布局
+--------------------------
+
+Day11 用的 plt.subplots(2,1) 是等分格子。
+真实分析图要「主图大、副图小」，用 GridSpec：
+
+  gs = GridSpec(3, 2, height_ratios=[3,1,1.2])  # 行高比例
+  ax = fig.add_subplot(gs[0, :])                 # 第0行整行
+
+记住一句话：
+  gs[行, 列] 切格子
+  gs[0, :] 里的 : = 这一行整行都要
+  height_ratios 控制每行高低
+
+
+三、业余图 → 简历级图 的4个细节
+-------------------------------
+
+1. 不等分布局   → 主图占3倍高，信息主次分明
+2. 去顶/右边框  → ax.spines['top'].set_visible(False)
+3. 网格调淡     → ax.grid(True, alpha=0.25, ls='--')
+4. 克制配色     → 定好一套色值，不花花绿绿
+
+一句话：专业感全在留白和克制，不在花哨。
+
+
+四、中文字体设置（每个notebook开头必跑）
+----------------------------------------
+
+matplotlib 默认字体没中文 → 全变方块。
+5行解决，全局生效：
+
+  from matplotlib import font_manager
+  FONT = '/System/Library/Fonts/Hiragino Sans GB.ttc'
+  font_manager.fontManager.addfont(FONT)
+  plt.rcParams['font.family'] = 'Hiragino Sans GB'
+  plt.rcParams['axes.unicode_minus'] = False   # 负号不变方块
+
+注意：pyenv 3.12 环境和之前的环境字体要各设一遍。
+
+
+五、重要概念：数据层与画图层解耦
+--------------------------------
+
+东财在线接口今天断连了（RemoteDisconnected）。
+但因为「拉数据」和「画图」是分开的两个cell，
+只需把数据源从 akshare 换成读本地 csv，
+后面画图代码一个字不用改。
+
+  df = pd.read_csv('../data/茅台.csv')   # 换这一行就行
+
+真实量化项目里，数据层永远是独立一层。
+接口挂了不该让整个分析瘫痪。
+
+
+六、踩坑记录：Jupyter 双改冲突
+-----------------------------
+
+后台改文件 + Jupyter标签页也开着 → 谁后保存谁赢，
+Jupyter旧版本一保存会把外部的修改覆盖掉，cell凭空消失。
+
+对策：
+  - 同一文件别让两边同时处于「已改未存」
+  - 要同步磁盘新版：关标签页(不保存)→重开，
+    或 File → Reload Notebook from Disk
+
+
+七、理解层次检查
+----------------
+
+□ L1: 知道 GridSpec 能切不等分格子
+□ L2: 能解释 height_ratios 和 gs[行,列] 的 : 含义
+□ L3: 能用 GridSpec 拼一张多面板图
+□ L4: 能说出业余图和简历图差在哪4个细节
+
+
+八、明日预告
+------------
+
+Day 13 — 见 tasks.json（技术指标方向：MACD/RSI/布林带）
