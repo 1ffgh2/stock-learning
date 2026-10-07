@@ -1,6 +1,15 @@
 # 大数据文件
 data/*.csv
 data/*.parquet
+data/Untitled.ipynb
+
+# 第三方克隆仓库（不是本人代码，且体积大，含嵌套 .git）
+Auquan-Tutorials/
+day31/Tutorials/
+day32/Finance-Research/
+
+# 个人文档（学习日志/计划表，不对外公开）
+股/
 
 # 虚拟环境
 venv/
