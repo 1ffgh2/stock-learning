@@ -1,0 +1,55 @@
+Day 14 — 第一个GitHub提交 + 下周预习
+=====================================
+日期：2026-07-16
+
+
+一、今日产出
+------------
+
+□ Git 三步走：add → commit → push
+□ 整理 Day9-13 全部 Notebook 和笔记 → 一次提交
+□ 写 README.md（项目介绍 + 结构 + 技能清单）
+□ 添加 MIT LICENSE
+□ .gitignore 排除 CSV/venv/缓存（已有，确认无误）
+
+
+二、Git 提交历史
+----------------
+
+700f875 Day 11-13: matplotlib可视化 + GridSpec仪表盘 + 五股综合实战
+d4c3b30 Day 10: akshare拉A股真数据
+f994937 Day 9: pip + Pandas快速入门
+84bc627 Day 8: Python环境搭建 + Git初始化
+1a7e4ae 初始化项目：Day1-8学习笔记 + gitignore
+
+每次 git commit 都是一张「快照」，随时可以回到过去的状态。
+
+
+三、核心概念：Git 三步走
+------------------------
+
+git add .        → 暂存（告诉Git哪些文件要拍照）
+git commit -m "" → 存档（拍一张快照，附说明）
+git push         → 上传（把本地快照同步到GitHub）
+
+类比：写Word文档
+  add    = Ctrl+S（保存草稿）
+  commit = 另存为带日期版本号的文件
+  push   = 上传到网盘
+
+
+四、第二周产出物检查
+--------------------
+
+□ Python/Jupyter 环境就绪           ✅
+□ 6库安装（pandas/numpy/matplotlib/...） ✅
+□ yfinance + akshare 数据获取        ✅ A股OK，美股待补
+□ 中美对比                          ⚠️ 只做了A股五股
+□ matplotlib 五大图表               ✅
+□ GitHub上线                       ⏳ 网络问题，已本地commit
+
+
+五、明日预告
+------------
+
+Day 15 — 移动平均线（MA）：SMA vs EMA / 金叉死叉 / 均线组实战
